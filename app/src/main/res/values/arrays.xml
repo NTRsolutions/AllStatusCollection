@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="menu_title_english">
+        <item>Attitude Status</item>
+        <item>Break up Status</item>
+        <item>Cute Status</item>
+        <item>Funny Status</item>
+        <item>Friendship Status</item>
+        <item>Life Status</item>
+        <item>Love Status</item>
+        <item>Kiss Status</item>
+        <item>Sad Status</item>
+        <item>Mother Status</item>
+        <item>Motivational Status</item>
+        <item>Father Status</item>
+        <item>Cool Status</item>
+        <item>Miss you Status</item>
+        <item>Birthday Status</item>
+        <item>Cute Sms</item>
+        <item>Success Status</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_english">
+        <item>attitude</item>
+        <item>breakup</item>
+        <item>cute</item>
+        <item>funny</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>kiss</item>
+        <item>sad</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>cool</item>
+        <item>missyou</item>
+        <item>birthday</item>
+        <item>cutesms</item>
+        <item>success</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_video">
+        <item>5 Minute Crafts Videos</item>
+        <item>Amazing Videos</item>
+        <item>Funny Videos</item>
+        <item>Health Tips videos</item>
+        <item>Six Pack videos</item>
+        <item>Relax-Meditation-Sleep Music</item>
+        <item>Hindi Video Songs</item>
+        <item>Tamil Video Songs</item>
+        <item>Whatsapp videos-Hindi</item>
+        <item>Whatsapp videos-Tamil</item>
+        <item>Health Tips videos – Tamil</item>
+        <item>Health Tips videos – Hindi</item>
+        <item>Healthy Recipes-tamil</item>
+        <item>Healthy Recipes-Hindi</item>
+        <item>5 Minute Tasty recipes</item>
+        <item>Other Videos-tamil</item>
+        <item>Other Videos-Hindi</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_video">
+        <item>fivemin_craft_video</item>
+        <item>amazing_video</item>
+        <item>funny_video</item>
+        <item>healthy_tip_video</item>
+        <item>six_pack_video</item>
+        <item>relax_meditation_sleep_music</item>
+        <item>hindi_video_songs</item>
+        <item>tamil_video_songs</item>
+        <item>whatsapp_hindi_video</item>
+        <item>whatsapp_tamil_video</item>
+        <item>health_tip_tamil_video</item>
+        <item>health_tip_hindi_video</item>
+        <item>health_recipe_tamil_video</item>
+        <item>health_recipe_hindi_video</item>
+        <item>fivemin_tasty_recipe_video</item>
+        <item>other_tamil_video</item>
+        <item>other_hindi_video</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_bengali">
+        <item>Attitude status</item>
+        <item>Break up status</item>
+        <item>Cute status (চতুর)</item>
+        <item>Funny status (হাস্যকর)</item>
+        <item>Friendship status (বন্ধুত্ব)</item>
+        <item>Life status (জীবন)</item>
+        <item>Love status (ভালবাসা)</item>
+        <item>Kiss status (চুম্বন)</item>
+        <item>Sad status (দু: খিত)</item>
+        <item>Mother status (মা)</item>
+        <item>Motivational status (প্রেরণা)</item>
+        <item>Father status (পিতা)</item>
+        <item>Cool status</item>
+        <item>Miss you status</item>
+        <item>Birthday status (জন্মদিন)</item>
+        <item>Success Status (সাফল্য)</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_bengali">
+        <item>attitude</item>
+        <item>breakup</item>
+        <item>cute</item>
+        <item>funny</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>kiss</item>
+        <item>sad</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>cool</item>
+        <item>missyou</item>
+        <item>birthday</item>
+        <item>success</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_gujrati">
+        <item>Attitude status</item>
+        <item>Cute status (ક્યૂટ)</item>
+        <item>Friendship status (મિત્રતા)</item>
+        <item>Life status (જીવન)</item>
+        <item>Love status (લવ)</item>
+        <item>Mother status (મધર)</item>
+        <item>Motivational status (પ્રેરક)</item>
+        <item>Father status (પિતા)</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_gujrati">
+        <item>attitude</item>
+        <item>cute</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_hindi">
+        <item>Attitude status (मनोवृत्ति)</item>
+        <item>Break up status (संबंध विच्छेद)</item>
+        <item>Cute status (प्यारा)</item>
+        <item>Funny status (मजेदार)</item>
+        <item>Friendship status (मित्रता)</item>
+        <item>Life status (जिंदगी)</item>
+        <item>Love status (मोहब्बत)</item>
+        <item>Kiss status (चुम्मा)</item>
+        <item>Sad status (उदास)</item>
+        <item>Mother status (मां)</item>
+        <item>Motivational status (प्रेरक)</item>
+        <item>Father status (पिता)</item>
+        <item>Cool status (ठंडा)</item>
+        <item>Miss you status (तुम्हारी याद आती हैं)</item>
+        <item>Birthday status (जन्मदिन)</item>
+        <item>Success Status (सफलता)</item>
+        <item>Cute Sms (प्यारा)</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_hindi">
+        <item>attitude</item>
+        <item>breakup</item>
+        <item>cute</item>
+        <item>funny</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>kiss</item>
+        <item>sad</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>cool</item>
+        <item>missyou</item>
+        <item>birthday</item>
+        <item>success</item>
+        <item>cutesms</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_kannada">
+        <item>Attitude status</item>
+        <item>Friendship status (ಸ್ನೇಹಕ್ಕಾಗಿ)</item>
+        <item>Love status (ಲವ್)</item>
+        <item>Mother status (ತಾಯಿ)</item>
+        <item>Motivational status (ಪ್ರೇರಕ)</item>
+        <item>Father status (ತಂದೆ)</item>
+        <item>Cool status</item>
+        <item>Birthday status (ಜನ್ಮದಿನ)</item>
+        <item>Success Status (ಯಶಸ್ಸು)</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_kannada">
+        <item>attitude</item>
+        <item>friendship</item>
+        <item>love</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>cool</item>
+        <item>birthday</item>
+        <item>success</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_marathi">
+        <item>Attitude status</item>
+        <item>Friendship status (मैत्री)</item>
+        <item>Life status (जीवन)</item>
+        <item>Love status (प्रेम)</item>
+        <item>Mother status (आई)</item>
+        <item>Motivational status (प्रेरणादायी)</item>
+        <item>Father status (वडील)</item>
+        <item>Cool status</item>
+        <item>Birthday status (वाढदिवस)</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_marathi">
+        <item>attitude</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>cool</item>
+        <item>birthday</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_tamil">
+        <item>Attitude status</item>
+        <item>Break up status (முறிவு)</item>
+        <item>Cute Story (அழகான கதை)</item>
+        <item>Funny status (வேடிக்கை)</item>
+        <item>Friendship status (நட்பு)</item>
+        <item>Life status (வாழ்க்கை)</item>
+        <item>Love status (காதல்)</item>
+        <item>Kiss status (முத்தம்)</item>
+        <item>Sad status (வருத்தம்)</item>
+        <item>Mother status (அம்மா)</item>
+        <item>Motivational status (ஊக்கம்)</item>
+        <item>Father status (அப்பா)</item>
+        <item>Cool status</item>
+        <item>Miss you status</item>
+        <item>Birthday status (பிறந்தநாள்)</item>
+        <item>Success Status (வெற்றி)</item>
+        <item>Cute Sms</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_tamil">
+        <item>attitude</item>
+        <item>breakup</item>
+        <item>cute</item>
+        <item>funny</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>kiss</item>
+        <item>sad</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>cool</item>
+        <item>missyou</item>
+        <item>birthday</item>
+        <item>success</item>
+        <item>cutesms</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+    <array name="menu_title_telugu">
+        <item>Attitude status</item>
+        <item>Break up status</item>
+        <item>Funny status (తమాషా)</item>
+        <item>Friendship status (స్నేహం)</item>
+        <item>Life status (లైఫ్)</item>
+        <item>Love status (లవ్)</item>
+        <item>Mother status (తల్లి)</item>
+        <item>Motivational status (ప్రేరణాత్మక)</item>
+        <item>Father status (తండ్రి)</item>
+        <item>Birthday status (పుట్టినరోజు)</item>
+        <item>Success Status (విజయం)</item>
+        <item>More cool app for you</item>
+        <item>Share the app</item>
+    </array>
+
+    <array name="menu_table_telugu">
+        <item>attitude</item>
+        <item>breakup</item>
+        <item>funny</item>
+        <item>friendship</item>
+        <item>life</item>
+        <item>love</item>
+        <item>mother</item>
+        <item>motivational</item>
+        <item>father</item>
+        <item>birthday</item>
+        <item>success</item>
+        <item>null</item>
+        <item>share</item>
+    </array>
+
+</resources>

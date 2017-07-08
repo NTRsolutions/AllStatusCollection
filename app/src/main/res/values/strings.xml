@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">All Status Collection</string>
+
+    <!--ads-->
+    <string name="banner">ca-app-pub-3883357351890782/9640344085</string>
+    <string name="interstitial">ca-app-pub-3883357351890782/2117077282</string>
+</resources>
