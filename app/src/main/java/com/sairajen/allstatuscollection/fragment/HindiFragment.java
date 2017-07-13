@@ -43,9 +43,9 @@ public class HindiFragment extends Fragment {
 
         String[] title = getResources().getStringArray(R.array.menu_title_hindi);
         String[] table = getResources().getStringArray(R.array.menu_table_hindi);
-        int[] thumbnail = {R.drawable.i1,R.drawable.i2,R.drawable.i3,R.drawable.i5,R.drawable.i4,R.drawable.i6, R.drawable.i7,
+        int[] thumbnail = {R.drawable.i1,R.drawable.i2,R.drawable.i3,R.drawable.i5,R.drawable.i3,R.drawable.i4,R.drawable.i6, R.drawable.i7,
                 R.drawable.i11,R.drawable.i15,R.drawable.i19,R.drawable.i9,R.drawable.i13,R.drawable.i15,R.drawable.i8,
-                R.drawable.i5,R.drawable.i4,R.drawable.i3,R.drawable.cool_apps,R.drawable.ic_launcher};
+                R.drawable.i5,R.drawable.i4,R.drawable.cool_apps,R.drawable.ic_launcher};
 
         menuList = new ArrayList<>();
 

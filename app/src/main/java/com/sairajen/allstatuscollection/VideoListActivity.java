@@ -2,6 +2,7 @@ package com.sairajen.allstatuscollection;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -24,6 +26,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.sairajen.allstatuscollection.adapter.StatusAdapter;
 import com.sairajen.allstatuscollection.adapter.VideoAdapter;
 import com.sairajen.allstatuscollection.model.Status;
 import com.sairajen.allstatuscollection.utils.Helper;
@@ -41,6 +44,7 @@ public class VideoListActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private List<Status> videoList;
     private VideoAdapter videoAdapter;
@@ -69,6 +73,7 @@ public class VideoListActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBarVideo);
         recyclerView = (RecyclerView) findViewById(R.id.videoListRecyclerView);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayoutVideo);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(VideoListActivity.this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -114,6 +119,51 @@ public class VideoListActivity extends AppCompatActivity {
         });
         request.setShouldCache(false);
         MySingleton.getInstance(VideoListActivity.this).addToRequestQueue(request);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                videoList.clear();
+                videoAdapter.notifyDataSetChanged();
+
+                int time = (int) (System.currentTimeMillis());
+                StringRequest request = new StringRequest(Request.Method.GET, "http://www.sharefb.com/statusApp/video.php?table_name="+tableName+"&time="+String.valueOf(time),
+                        new com.android.volley.Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String s) {
+                                Log.e("TAG",s);
+                                try {
+                                    JSONArray array = new JSONArray(s);
+                                    for (int i=0; i<array.length(); i++) {
+                                        Status status = new Status();
+                                        JSONObject object = array.getJSONObject(i);
+                                        status.setId(object.getInt("id"));
+                                        status.setStatus(object.getString("text"));
+                                        status.setTitle(object.getString("title"));
+                                        if (object.getString("share").equals("null"))
+                                            status.setExtra("");
+                                        else status.setExtra(object.getString("share"));
+                                        videoList.add(status);
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                } finally {
+                                    videoAdapter = new VideoAdapter(VideoListActivity.this,videoList);
+                                    recyclerView.setAdapter(videoAdapter);
+                                    swipeRefreshLayout.setRefreshing(false);
+                                }
+                            }
+                        }, new com.android.volley.Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        Toast.makeText(VideoListActivity.this,""+volleyError.getMessage(), Toast.LENGTH_SHORT).show();
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+                request.setShouldCache(false);
+                MySingleton.getInstance(VideoListActivity.this).addToRequestQueue(request);
+            }
+        });
 
     }
 

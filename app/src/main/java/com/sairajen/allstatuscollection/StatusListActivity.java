@@ -2,6 +2,7 @@ package com.sairajen.allstatuscollection;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,12 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -27,11 +26,9 @@ import com.sairajen.allstatuscollection.adapter.StatusAdapter;
 import com.sairajen.allstatuscollection.model.Status;
 import com.sairajen.allstatuscollection.utils.Helper;
 import com.sairajen.allstatuscollection.utils.MySingleton;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +36,7 @@ public class StatusListActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private List<Status> statusList;
     private StatusAdapter statusAdapter;
@@ -67,6 +65,7 @@ public class StatusListActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBarStatus);
         recyclerView = (RecyclerView) findViewById(R.id.statusListRecyclerView);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayoutStatus);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(StatusListActivity.this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -77,7 +76,7 @@ public class StatusListActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         int time = (int) (System.currentTimeMillis());
         StringRequest request = new StringRequest(Request.Method.GET, "http://www.sharefb.com/statusApp/readStatus.php?table_name="+tableName+"&time="+String.valueOf(time),
-                new com.android.volley.Response.Listener<String>() {
+                new Response.Listener<String>() {
                     @Override
                     public void onResponse(String s) {
                         try {
@@ -97,7 +96,7 @@ public class StatusListActivity extends AppCompatActivity {
                             progressBar.setVisibility(View.GONE);
                         }
                     }
-                }, new com.android.volley.Response.ErrorListener() {
+                }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
                 Toast.makeText(StatusListActivity.this,""+volleyError.getMessage(),Toast.LENGTH_SHORT).show();
@@ -106,6 +105,46 @@ public class StatusListActivity extends AppCompatActivity {
         });
         request.setShouldCache(false);
         MySingleton.getInstance(StatusListActivity.this).addToRequestQueue(request);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                statusList.clear();
+                statusAdapter.notifyDataSetChanged();
+
+                int time = (int) (System.currentTimeMillis());
+                StringRequest request = new StringRequest(Request.Method.GET, "http://www.sharefb.com/statusApp/readStatus.php?table_name="+tableName+"&time="+String.valueOf(time),
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String s) {
+                                try {
+                                    JSONArray array = new JSONArray(s);
+                                    for (int i=0; i<array.length(); i++) {
+                                        Status status = new Status();
+                                        JSONObject object = array.getJSONObject(i);
+                                        status.setId(object.getInt("id"));
+                                        status.setStatus(object.getString("text"));
+                                        statusList.add(status);
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                } finally {
+                                    statusAdapter = new StatusAdapter(StatusListActivity.this,statusList);
+                                    recyclerView.setAdapter(statusAdapter);
+                                    swipeRefreshLayout.setRefreshing(false);
+                                }
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        swipeRefreshLayout.setRefreshing(false);
+                        Toast.makeText(StatusListActivity.this,""+volleyError.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+                request.setShouldCache(false);
+                MySingleton.getInstance(StatusListActivity.this).addToRequestQueue(request);
+            }
+        });
 
     }
 

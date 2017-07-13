@@ -49,9 +49,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 if (videoList.get(position).getExtra().equals("")) {
-                    Helper.shareViaFacebook(context,videoList.get(position).getExtra());
-                } else {
                     Helper.shareViaFacebook(context,videoList.get(position).getStatus());
+                } else {
+                    Helper.shareViaFacebook(context,videoList.get(position).getExtra());
                 }
             }
         });
@@ -60,9 +60,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 if (videoList.get(position).getExtra().equals("")) {
-                    Helper.share(context,videoList.get(position).getExtra());
-                } else {
                     Helper.share(context,videoList.get(position).getStatus());
+                } else {
+                    Helper.share(context,videoList.get(position).getExtra());
                 }
             }
         });
@@ -71,9 +71,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 if (videoList.get(position).getExtra().equals("")) {
-                    Helper.shareViaTwitter(context,videoList.get(position).getExtra());
-                } else {
                     Helper.shareViaTwitter(context,videoList.get(position).getStatus());
+                } else {
+                    Helper.shareViaTwitter(context,videoList.get(position).getExtra());
                 }
             }
         });
@@ -82,9 +82,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.MyViewHolder
             @Override
             public void onClick(View v) {
                 if (videoList.get(position).getExtra().equals("")) {
-                    Helper.shareViaWhatsapp(context,videoList.get(position).getExtra());
-                } else {
                     Helper.shareViaWhatsapp(context,videoList.get(position).getStatus());
+                } else {
+                    Helper.shareViaWhatsapp(context,videoList.get(position).getExtra());
                 }
             }
         });

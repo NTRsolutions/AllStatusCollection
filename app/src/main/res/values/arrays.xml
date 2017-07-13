@@ -6,6 +6,7 @@
         <item>Break up Status</item>
         <item>Cute Status</item>
         <item>Funny Status</item>
+        <item>Amazing Whatsapp post</item>
         <item>Friendship Status</item>
         <item>Life Status</item>
         <item>Love Status</item>
@@ -17,7 +18,6 @@
         <item>Cool Status</item>
         <item>Miss you Status</item>
         <item>Birthday Status</item>
-        <item>Cute Sms</item>
         <item>Success Status</item>
         <item>More cool app for you</item>
         <item>Share the app</item>
@@ -28,6 +28,7 @@
         <item>breakup</item>
         <item>cute</item>
         <item>funny</item>
+        <item>cutesms</item>
         <item>friendship</item>
         <item>life</item>
         <item>love</item>
@@ -39,7 +40,6 @@
         <item>cool</item>
         <item>missyou</item>
         <item>birthday</item>
-        <item>cutesms</item>
         <item>success</item>
         <item>null</item>
         <item>share</item>
@@ -162,6 +162,7 @@
         <item>Break up status (संबंध विच्छेद)</item>
         <item>Cute status (प्यारा)</item>
         <item>Funny status (मजेदार)</item>
+        <item>Amazing Whatsapp post</item>
         <item>Friendship status (मित्रता)</item>
         <item>Life status (जिंदगी)</item>
         <item>Love status (मोहब्बत)</item>
@@ -174,7 +175,6 @@
         <item>Miss you status (तुम्हारी याद आती हैं)</item>
         <item>Birthday status (जन्मदिन)</item>
         <item>Success Status (सफलता)</item>
-        <item>Cute Sms (प्यारा)</item>
         <item>More cool app for you</item>
         <item>Share the app</item>
     </array>
@@ -184,6 +184,7 @@
         <item>breakup</item>
         <item>cute</item>
         <item>funny</item>
+        <item>cutesms</item>
         <item>friendship</item>
         <item>life</item>
         <item>love</item>
@@ -196,7 +197,6 @@
         <item>missyou</item>
         <item>birthday</item>
         <item>success</item>
-        <item>cutesms</item>
         <item>null</item>
         <item>share</item>
     </array>
@@ -262,6 +262,7 @@
         <item>Break up status (முறிவு)</item>
         <item>Cute Story (அழகான கதை)</item>
         <item>Funny status (வேடிக்கை)</item>
+        <item>படித்ததில் பிடித்தது (post)</item>
         <item>Friendship status (நட்பு)</item>
         <item>Life status (வாழ்க்கை)</item>
         <item>Love status (காதல்)</item>
@@ -274,7 +275,6 @@
         <item>Miss you status</item>
         <item>Birthday status (பிறந்தநாள்)</item>
         <item>Success Status (வெற்றி)</item>
-        <item>Cute Sms</item>
         <item>More cool app for you</item>
         <item>Share the app</item>
     </array>
@@ -284,6 +284,7 @@
         <item>breakup</item>
         <item>cute</item>
         <item>funny</item>
+        <item>cutesms</item>
         <item>friendship</item>
         <item>life</item>
         <item>love</item>
@@ -296,7 +297,6 @@
         <item>missyou</item>
         <item>birthday</item>
         <item>success</item>
-        <item>cutesms</item>
         <item>null</item>
         <item>share</item>
     </array>

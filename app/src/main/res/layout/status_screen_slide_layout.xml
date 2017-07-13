@@ -82,18 +82,6 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    android:src="@drawable/ic_fb"
-                    android:id="@+id/page_slide_share_fb"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:background="#E0E0E0"
-                    android:layout_height="match_parent" />
-
-                <ImageView
-                    android:layout_weight="1"
                     android:src="@drawable/ic_whatsapp"
                     android:id="@+id/page_slide_share_whatsapp"
                     android:layout_width="32dp"
@@ -106,8 +94,8 @@
 
                 <ImageView
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/ic_copy"
-                    android:id="@+id/page_slide_copy"
+                    android:src="@drawable/ic_email"
+                    android:id="@+id/page_slide_share_email"
                     android:layout_width="32dp"
                     android:layout_height="32dp" />
 
@@ -120,6 +108,18 @@
                     android:layout_weight="1"
                     android:src="@drawable/ic_twitter"
                     android:id="@+id/page_slide_share_twitter"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:background="#E0E0E0"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_copy"
+                    android:id="@+id/page_slide_copy"
                     android:layout_width="32dp"
                     android:layout_height="32dp" />
 

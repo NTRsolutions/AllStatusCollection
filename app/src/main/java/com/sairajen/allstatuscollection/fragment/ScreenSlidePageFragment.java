@@ -1,7 +1,10 @@
 package com.sairajen.allstatuscollection.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +50,7 @@ public class ScreenSlidePageFragment extends Fragment implements View.OnClickLis
     private void init() {
         tvStatus = (TextView) rootView.findViewById(R.id.statusText);
         tvTotalCount = (TextView) rootView.findViewById(R.id.page_slide_text_total_count);
-        shareFB = (ImageView) rootView.findViewById(R.id.page_slide_share_fb);
+        shareFB = (ImageView) rootView.findViewById(R.id.page_slide_share_email);
         shareWhatsapp = (ImageView) rootView.findViewById(R.id.page_slide_share_whatsapp);
         shareTwitter = (ImageView) rootView.findViewById(R.id.page_slide_share_twitter);
         copy = (ImageView) rootView.findViewById(R.id.page_slide_copy);
@@ -63,21 +66,27 @@ public class ScreenSlidePageFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.page_slide_share_fb:
-                //share only status here because we wont use fb SDK
-                Helper.shareViaFacebook(getActivity(),text/* + "\n" + Helper.SHARE_SOURCE*/);
+            case R.id.page_slide_share_email:
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[] {""});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "All Status Collection");
+                intent.putExtra(Intent.EXTRA_TEXT,text);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                }
                 break;
             case R.id.page_slide_share_whatsapp:
-                Helper.shareViaWhatsapp(getActivity(),text + "\n" + Helper.SHARE_SOURCE);
+                Helper.shareViaWhatsapp(getActivity(),text + "\n\n" + Helper.SHARE_SOURCE);
                 break;
             case R.id.page_slide_share_twitter:
-                Helper.shareViaTwitter(getActivity(),text + "\n" + Helper.SHARE_SOURCE);
+                Helper.shareViaTwitter(getActivity(),text + "\n\n" + Helper.SHARE_SOURCE);
                 break;
             case R.id.page_slide_copy:
-                Helper.copy(getActivity(),text + "\n" + Helper.SHARE_SOURCE);
+                Helper.copy(getActivity(),text + "\n\n" + Helper.SHARE_SOURCE);
                 break;
             case R.id.page_slide_share:
-                Helper.share(getActivity(),text + "\n" + Helper.SHARE_SOURCE);
+                Helper.share(getActivity(),text + "\n\n" + Helper.SHARE_SOURCE);
                 break;
         }
     }
